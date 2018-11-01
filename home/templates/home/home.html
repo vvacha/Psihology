@@ -1,0 +1,235 @@
+{% extends 'home/main.html' %}
+{% load staticfiles %}
+{% block droch %}
+
+
+    <div class="jumbotron text-center header-jumbotron">
+        <div class="container">
+          <br> <br> <br>
+          <h1>Есть вопросы к психологу?</h1>
+          <p>Платформа для консультаций с психологом online</p>
+          <p class="m-b-0">
+              <a class="btn btn-default btn-lg" role="button" data-toggle="modal" data-target="#sendModal">
+                  <strong>Создать тему!</strong>
+                  </a>
+                  <!--<a class="btn btn-default btn-lg" href="#" role="button" data-toggle="modal" data-target="#regModal">-->
+                  <!--<strong>Создать тему!</strong>-->
+                  <!--</a>-->
+          </p>
+          <small><strong>Это бесплатно</strong></small>
+        </div>
+      </div>
+    </header>
+
+    <section class="section-one" id="students" name="students">
+      <div class="container text-center">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>О чем наш сервис?</h2>
+                <hr>
+                <p>Тут можно проконсультироваться у психолога по любым интересующих вас вопросам .</p>
+                <p>Мы стремимся сделать психологию простой и интересной. Проходи тесты и читай статьи.</p>
+            </div>
+        </div>
+
+        <div class="row image-section">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="{% static  "images/image6.jpg" %}" alt="..." class="img-thumbnail">
+              <div class="caption">
+                <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i> Online Консультации</h3>
+                <hr>
+                <p>Проходи интерактивные уроки или создавай свои и учи других</p>
+              </div>
+            </div>
+            <!-- <img src="images/header.jpg" alt="..." class="img-circle" width="200px" height="200px">
+              <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i> Заголовок</h3>
+            <hr>
+            <p>Идейные соображения высшего порядка, а также сложившаяся структура организации играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.</p> -->
+          </div>
+
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="{% static  "images/image7.jpg" %}" alt="..." class="img-thumbnail">
+              <div class="caption">
+                <h3><i class="fa fa-pencil" aria-hidden="true"></i> Статьи</h3>
+                <hr>
+                <p>Выполняй упражнения для закрепления полученых знаний</p>
+              </div>
+            </div>
+            <!-- <img src="images/header.jpg" alt="..." class="img-circle" width="200px" height="200px">
+            <h3><i class="fa fa-pencil" aria-hidden="true"></i> Заголовок</h3>
+            <hr>
+            <p>Идейные соображения высшего порядка, а также сложившаяся структура организации играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.</p> -->
+          </div>
+
+          <div class="col-sm-4">
+            <div class="thumbnail">
+              <img src="{% static  "images/suit.jpeg" %}" alt="..." class="img-thumbnail">
+              <div class="caption">
+                <h3><i class="fa fa-trophy" aria-hidden="true"></i> Тестирования</h3>
+                <hr>
+                <p>Получи новые навыки и сертификат подтверждающие их</p>
+              </div>
+            </div>
+            <!-- <img src="images/header.jpg" alt="..." class="img-circle" width="200px" height="200px">
+            <h3><i class="fa fa-trophy" aria-hidden="true"></i> Заголовок</h3>
+            <hr>
+            <p>Идейные соображения высшего порядка, а также сложившаяся структура организации играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.</p> -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-two" id="employers" name="employers">
+      <div class="jumbotron section-two-jumbotron m-b-0">
+        <div class="container">
+          <h1>Работодателям</h1>
+          <p>Вы можете создать и опубликовать свои курсы с упражнениями</p>
+          <p class="m-b-0"><a class="btn btn-default btn-lg" href="#" role="button" data-toggle="modal" data-target="#regModal"><strong>Преподавать!</strong></a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <footer>
+      <div class="container">
+        <p>
+
+        </p>
+      </div>
+    </footer>
+
+
+    <!-- Форма входа -->
+
+   <!--  <div class="modal fade" id="logModal" tabindex="-1" role="dialog" aria-labelledby="logModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Вход</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Почта</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Электронная почта">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Пароль</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-default">Войти</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!--Форма регистрации-->
+    <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Регистрация</h4>
+          </div>
+          <div class="modal-body">
+            <form  action="" method="post">
+             {% csrf_token %}
+            <!-- <form> -->
+              <div class="form-group">
+                <label for="exampleInputName">Имя</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Имя">
+              </div>
+
+              <div class="form-group">
+                <label for="exampleInputCity">Город</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Город">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Почта</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Электронная Почта">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Пароль</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+              </div>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ученик
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Преподаватель
+              </label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-default">Регистрация</button>
+          </div>
+        </div>
+      </div>
+    </div>
+            </form>
+
+    <!--Форма обратной связи-->
+    <div class="modal fade" id="sendModal" tabindex="-1" role="dialog" aria-labelledby="sendModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Создание темы</h4>
+          </div>
+          <div class="modal-body">
+
+
+<!--/////////////////////////////////-->
+
+            <form id="form-public-post" method="POST" action="/teamcreate/">
+
+<!--///////////////////////////////////-->
+
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">Название темы</label>
+                <input name="lesson_name" type="email" class="form-control" id="exampleInputEmail1" placeholder="Введите название">
+              </div>
+
+
+
+
+
+                  <tr><th><label for="id_first">First:</label></th><td>
+                  <input id="id_first" type="text" name="first" maxlength="100"/> </td> </tr>
+
+
+
+
+
+              <div class="form-group">
+                <label for="exampleInputPassword1">Текст</label>
+                <textarea class="form-control" rows="3" placeholder="Введите текст"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-default">Отправить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+{% endblock %}

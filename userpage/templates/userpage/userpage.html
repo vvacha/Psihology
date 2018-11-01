@@ -1,0 +1,155 @@
+{% extends 'home/main.html' %}
+{% load staticfiles %}
+{% block userpage %}
+
+<!-- <div class="avatar_cabinet" style="background-image:url('{% static user.customuser.avatar %}'); width:147px; height:147px; float:left ; background-position: center; background-size: cover;"></div>
+ -->
+<!-- <br> -->
+
+<!-- 
+<h5 >___nik name ---   </h5>
+<h5 >___Имя  ---  {{userdata.first_name}} </h5>
+<h5 >___Фамилия ---  {{userdata.last_name}} </h5>
+<h5 >___Город ---  {{userdata.customuser.city}} </h5>
+<h5 >___id ---  {{userdata.id}} </h5> -->
+<br>
+
+{{userdata.as_p}}
+<!-- {{userdata.date_joined}} -->
+{{userdata.email}}
+
+
+
+
+<div class="jumbotron">
+
+<div class="container">
+		<div class="row">
+			
+			<!-- left collumn -->
+			<div class="col-md-4">
+				
+				<div class="thumbnail"> 
+					<div class="profile-background" style="background-image:url('{% static "images/bg.jpg" %}');">
+
+					</div>
+					<div class="profile-avatar" >
+						<img src="{% static user.customuser.avatar %}" alt="VVACHA">
+					</div>
+
+							
+
+					<div class="card-body">
+						<div class="profile-title">{{userdata.username}}</div>
+						<div class="profile-title">{{userdata.first_name}}  {{userdata.last_name}}</div>
+						<div class="profile-description">
+							<p>Город: {{userdata.customuser.city}}</p>
+							<p>Дата регистрации: <br>{{userdata.date_joined}}</p>
+							<p>Сегодня мой статус говно!!!!!!!!!!!</p>
+						</div>
+
+<!-- 
+						<ul class="stats">
+							
+							<li class="stats-item">
+								<b class="stats-title">Твиты</b>
+								<b class="stats-count">656</b>
+							</li>
+							<li class="stats-item">
+								<b class="stats-title">Лайки</b>
+								<b class="stats-count">656</b>
+							</li>
+							<li class="stats-item">
+								<b class="stats-title">Репосты</b>
+								<b class="stats-count">656</b>
+							</li>
+						</ul> -->
+
+						<form action="{% url 'user_update' userdata.id %}">
+
+							<div class = "center">
+							
+
+
+							
+							<button  class="btn btn-default btn-lg" type="submit" style="background: #50e5a0">Редактировать профиль</button>
+
+
+							</div>
+
+
+						</form>
+						<br>
+
+					
+					</div>
+
+
+
+
+
+
+				</div>
+
+			</div>
+			<!-- ////left collumn -->
+
+
+
+
+			<!-- Right collumn -->
+			<div class="col-md-8">
+
+				<!-- make a tweeet -->
+				<!-- <div class="thumbnail"> -->
+					<!-- <div class="card-body"> -->
+						<form>
+							<div class="modal-content">
+								
+						  <!-- <div class="form-group"> -->
+						  	<div class="content">
+						  		
+						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Что нового">
+						    <br>
+						  
+						  <!-- </div> -->
+            			<button type="submit" class="btn btn-default">Отправить</button>
+						  	</div>
+
+
+
+         					
+						 
+			
+						</form>
+						<!-- </div> -->
+					<!-- </div> -->
+				</div>
+				<!-- ////make a tweeet -->
+					
+					<br>
+					<br>
+				<div class="thumbnail">
+					
+					<div class="profile-title">Записи пользователя</div>
+				</div>
+
+			</div>
+			<!-- ////Right collumn -->
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
