@@ -1,18 +1,28 @@
-<html>
-    <head>
-        
-    </head>
-    <body>
-        <div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
+{% extends 'home/main.html' %}
 
-{% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+{% block question %}
+
+<div class="page-header">
+    <h1><a href="/">Психология. Обращения.</a></h1>
+</div>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+
+   {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>Опубликовано: {{ post.published_date }}</p>
+                    </div>
+                    
+                    <h1><a href="{% url 'question_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+         </div>
     </div>
-{% endfor %}
-    </body>
-</html>
+</div>
+{% endblock %}
+
+
+
