@@ -108,7 +108,15 @@
 								
 						  <!-- <div class="form-group"> -->
 						  	<div class="content">
+						  		 <div>				
+ <a class="btn btn-default btn-lg" style="background: #50e5a0"><span class="glyphicon glyphicon-pencil"></span></a>
+							</div>
 						  		
+
+
+							
+
+
 						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Что нового">
 						    <br>
 						  
@@ -118,7 +126,16 @@
 
 
 
-         					
+<form action="/your-name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form>
+
+
+
+<label for="your_name">Your name: </label>
+<input id="your_name" type="text" name="your_name" maxlength="100">
 						 
 			
 						</form>
@@ -140,6 +157,77 @@
 	</div>
 </div>
 
+
+
+
+
+
+
+<h1></h1>
+                    <h1><a href="question/new/">New post</a></h1>
+
+   <!--  <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class=" btn-default">Save</button>
+    </form> -->
+
+<div class="page-header">
+            <a href="{% url 'question_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Вопросы</a></h1>
+        </div>
+
+
+
+<div class="content container">
+
+    <div class="row">
+        <div class="col-md-8">
+            <a href="{% url 'question_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+   {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>Опубликовано: {{ post.published_date }}</p>
+                    </div>
+                    
+                    <h1><a href="{% url 'question_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+         </div>
+    </div>
+</div>
+
+
+
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                   <!--  {% block content %}
+                    {% endblock %} -->
+                </div>
+            </div>
+        </div>
+
+
+
+11111111111111111111111
+        {{ question }}
+11111111111111111111
+
+
+
+ <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+       
+
+
+<div class = "center">		
+
+	<button  class="btn btn-default btn-lg" type="submit" style="background: #50e5a0">Отправить</button>
+
+</div>
+    </form>
 
 
 

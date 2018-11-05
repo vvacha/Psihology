@@ -1,0 +1,17 @@
+{% extends 'home/main.html' %}
+
+
+{% block question %}
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+       
+
+
+<div class = "center">		
+
+	<button  class="btn btn-default btn-lg" type="submit" style="background: #50e5a0">Отправить</button>
+
+</div>
+    </form>
+{% endblock %}

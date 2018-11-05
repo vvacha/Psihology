@@ -2,13 +2,27 @@
 
 {% block question %}
 
+
+<h1></h1>
+                    <h1><a href="question/new/">New post</a></h1>
+
+   <!--  <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class=" btn-default">Save</button>
+    </form> -->
+
 <div class="page-header">
-    <h1><a href="/">Психология. Обращения.</a></h1>
-</div>
+            <a href="{% url 'question_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Вопросы</a></h1>
+        </div>
+
+
+
 <div class="content container">
+
     <div class="row">
         <div class="col-md-8">
-
+            <a href="{% url 'question_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
    {% for post in posts %}
                 <div class="post">
                     <div class="date">
@@ -22,6 +36,24 @@
          </div>
     </div>
 </div>
+
+
+
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                   <!--  {% block content %}
+                    {% endblock %} -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
 {% endblock %}
 
 

@@ -4,8 +4,8 @@ from django.views import generic
 from django.contrib import auth
 from .forms import SettingForm
 
-
-
+from django.shortcuts import redirect
+from question.models import Post
 
 
 # from django.core.context_processors import csrf
@@ -29,10 +29,43 @@ class UserDataView(generic.TemplateView):
 	template_name = 'userpage/userpage.html'
 
 	def get_context_data(self, **kwargs):
+		print ("ZALYYYYYYYYYYYYYYYYPA")
 		context = super(UserDataView, self).get_context_data(**kwargs)
 		context['username'] = auth.get_user(self.request).username
 		context['userdata'] = auth.get_user(self.request)
+		context['question'] = Post.objects.all()
 		return context
+
+	def question_new(request):
+		print("ZALYYYYYYYYYYYYYYYYPAqq!!!!!!!!!!!!!!!")
+		if request.method == "POST":
+			form = PostForm(request.POST)
+			if form.is_valid():
+				post = form.save(commit=False)
+				post.author = request.user
+				post.published_date = timezone.now()
+				post.save()
+				return redirect('question_detail', pk=post.pk)
+		else:
+			form = PostForm()
+		return render(request, 'question/question_edit.html', {'form': form})
+
+	def question_edit(request, pk):
+		print ("ZALYYYYYYYYYYYYYYYYPA")
+		post = get_object_or_404(Post, pk=pk)
+		if request.method == "POST":
+			form = PostForm(request.POST, instance=post)
+			if form.is_valid():
+				post = form.save(commit=False)
+				post.author = request.user
+				post.published_date = timezone.now()
+				post.save()
+				return redirect('question_detail', pk=post.pk)
+		else:
+			form = PostForm(instance=post)
+		return render(request, 'question/question_edit.html', {'form': form})
+
+
 
 
 class UserUpdate(UpdateView):

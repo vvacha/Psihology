@@ -7,6 +7,11 @@
                 {{ post.published_date }}
             </div>
         {% endif %}
+
+        <div>				
+ <a class="btn btn-default btn-lg" style="background: #50e5a0" href="{% url 'question_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+							</div>
+       
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
